@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: django-todo-service
+  namespace: react-django-app
+spec:
+  selector:
+    app: django-app
+  ports:
+    - protocol: TCP
+      port: 8001
+      targetPort: 9376
+  type: NodePort
